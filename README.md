@@ -96,7 +96,35 @@ In the final step, the estimated camera trajectory is compared with ground truth
 ## 2.3 Discussion of visual-SLAM application.
 For my own implementation of the vSLAM, I plan to record a video of an indoor scene. Then, extracting images from the video at regular intervals to create a frame sequence. After generating the image sequence, I will modify parts of the MATLAB example code, mainly the image loading and camera parameter sections to make it work with my own data. This allowed me to apply the vSLAM, including feature tracking, pose estimation, mapping, and visualization, based on images from a real scene.
 
+## 3. Implement the visual-SLAM
+In this section, the process of implementing a vSLAM application based on the MATLAB example studied earlier will be described. By recording a video of a real environment, the video was then converted into a sequence of images using MATLAB, and the modified vSLAM example code is applied to this custom dataset. The implementation includes camera calibration, data preprocessing, code adaptation, and final reconstruction. The following steps explain each part of the process in detail.
 
+## 3.1 Get the database from the scene
+In order to obtain enough data, I use a smartphone to take a video with a resolution of 1920*1080 pixels and a frame rate of 30. The video is 60 seconds. After extracting the images through MATLAB, a total of 906 images were obtained as a database. The following figure 3.1.1 shows what the scene looks like, and I included a photo (figure 3.1.2) of myself when taking the video.
+
+<p align="center">
+  <img src="Figure/figure3.1.1-2.jpg" width="1000">
+</p>
+
+## 3.2 Get the camera's intrinsics data
+In order to obtain some important parameters of the camera, such as focal length, principal point, etc. I followed the previous homework steps, took multiple checkerboard pictures, and then obtained the camera parameters through MATLAB, as shown in the following figure 3.2.1
+
+<p align="center">
+  <img src="Figure/figure3.2.1.jpg" width="1000">
+</p>
+
+## 3.3.1 Map initialization
+After obtaining all the required data, modify the MATLAB example code to perform map initialization for the scene. As shown in the figure 3.3.1
+<p align="center">
+  <img src="Figure/figure3.3.1.1.jpg" width="1000">
+</p>
+
+## 3.3.2 Refine and Visualize the Initial Reconstruction
+Following the same steps as in Sections 2.2.2 to 2.2.4, results are obtained as the following figure:
+
+<p align="center">
+  <img src="Figure/figure3.3.2.1-2.jpg" width="1000">
+</p>
 
 ## 2. Recording Real Data
 - A 60-second indoor video was recorded with a smartphone (1920×1080 @ 30fps).
