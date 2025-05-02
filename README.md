@@ -43,6 +43,10 @@ This part summarizes MATLAB example code about Visual-SLAM. The process contains
 ###	Evaluation with Ground Truth
 -Compare the estimated trajectory with ground truth data to assess system accuracy.
 
+## 2.2.1 Map initialization
+<p align="center">
+  <img src="figure/figure2.2.4.1-2" width="400">
+</p>
 
 ## 2. Recording Real Data
 - A 60-second indoor video was recorded with a smartphone (1920×1080 @ 30fps).
@@ -59,7 +63,7 @@ This part summarizes MATLAB example code about Visual-SLAM. The process contains
 - Tuned parameters to improve tracking on real images
 
 ---
-## 2.2.1 Map initialization
+
 
 
 
