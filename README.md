@@ -13,45 +13,46 @@ Visual Simultaneous Localization and Mapping (visual-SLAM) is a technique that e
 
 
 
-### 2. Implement visual-SLAM example code 
+## 2. Implement visual-SLAM example code 
 This part summarizes MATLAB example code about Visual-SLAM. The process contains a series of steps, like image preprocessing, feature extraction and matching, pose estimation, map point triangulation, keyframe selection, bundle adjustment, loop closure detection, and visualization. Each step plays an important role in reconstructing the camera's 3D position and orientation. The following summarizes the main steps of how their Visual-SLAM is implemented.
 
--	Initialization and Image Loading -->Prepare input image sequence and camera parameters for processing.
+###	Initialization and Image Loading 
+-Prepare input image sequence and camera parameters for processing.
 
--	Map Initialization
--->Estimate the initial camera motion and triangulate the first 3D map points.
+###Map Initialization
+-Estimate the initial camera motion and triangulate the first 3D map points.
 
--	Store Key Frames and Map Points
--->Save the initial key frames and map points into structured datasets.
+###	Store Key Frames and Map Points
+-Save the initial key frames and map points into structured datasets.
 
--	Place Recognition Database Setup
--->Create a visual vocabulary using bag-of-words for future loop detection.
+###	Place Recognition Database Setup
+-Create a visual vocabulary using bag-of-words for future loop detection.
 
--	Initial Map Refinement
--->Apply bundle adjustment to optimize the initial reconstruction.
+###	Initial Map Refinement
+-Apply bundle adjustment to optimize the initial reconstruction.
 
--	Tracking
--->Track camera motion frame by frame and decide when to insert new key frames.
+###	Tracking
+-Track camera motion frame by frame and decide when to insert new key frames.
 
--	Local Mapping
--->Expand and refine the map by triangulating new points and adjusting nearby poses.
+### Local Mapping
+-Expand and refine the map by triangulating new points and adjusting nearby poses.
 
--	Loop Closure 
--->Detect and correct drift by recognizing revisited places and updating the global map.
+###	Loop Closure 
+-Detect and correct drift by recognizing revisited places and updating the global map.
 
--	Evaluation with Ground Truth
--->Compare the estimated trajectory with ground truth data to assess system accuracy.
+###	Evaluation with Ground Truth
+-Compare the estimated trajectory with ground truth data to assess system accuracy.
 
 
-### 2. Recording Real Data
+## 2. Recording Real Data
 - A 60-second indoor video was recorded with a smartphone (1920×1080 @ 30fps).
 - MATLAB was used to extract every 5th frame, resulting in 906 images for the dataset.
 
-### 3. Camera Calibration
+## 3. Camera Calibration
 - Calibration images of a checkerboard pattern were taken.
 - MATLAB’s `estimateCameraParameters` function was used to obtain intrinsic parameters for the external webcam used.
 
-### 4. Adapting the Code
+##4. Adapting the Code
 - Modified image loading to work with the custom image sequence
 - Replaced the default camera intrinsics with the calibrated parameters
 - Removed the ground truth section as no GT data was available
