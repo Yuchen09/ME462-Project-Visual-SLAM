@@ -1,6 +1,6 @@
 # Visual-SLAM with MATLAB – ME462 Robotic Vision Project
 
-**Author**: Yuchen Xia  
+**Name**: Yuchen Xia  
 **Date**: April 30, 2025  
 **Course**: ME462 Robotic Vision
 
@@ -45,7 +45,7 @@ This part summarizes MATLAB example code about Visual-SLAM. The process contains
 
 ## 2.2.1 Map initialization
 <p align="center">
-  <img src="figure/figure2.2.4.1-2" width="400">
+  <img src="Figure/figure2.2.4.1-2" width="400">
 </p>
 
 ## 2. Recording Real Data
