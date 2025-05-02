@@ -127,7 +127,7 @@ Following the same steps as in Sections 2.2.2 to 2.2.4, results are obtained as 
 </p>
 
 
-3.3.3 Local Mapping and Loop Closure
+## 3.3.3 Local Mapping and Loop Closure
 Following the same steps, the below shows some parts of the trajectory of the camera being tracked during the main loop.
 
 <p align="center">
@@ -144,7 +144,7 @@ Following the same steps, the below shows some parts of the trajectory of the ca
 </p>
 After the main loop, perform optimization to correct the drift of camera poses and update the 3-D locations of the map points using the optimized poses and the associated scales. As shown in the figure 3.3.3.6
 <p align="center">
-  <img src="Figure/figure3.3.3.5.jpg" width="1000">
+  <img src="Figure/figure3.3.3.5.jpg" width="700">
 </p>
 
 
