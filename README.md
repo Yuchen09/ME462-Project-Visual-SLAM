@@ -6,27 +6,45 @@
 
 ---
 
-## 📌 Overview
+## 1. Introduction
 
-This project implements a **monocular visual-SLAM (vSLAM)** system in MATLAB, based on the official MathWorks example:  
-📖 [Monocular Visual Simultaneous Localization and Mapping](https://www.mathworks.com/help/vision/ug/monocular-visual-simultaneous-localization-and-mapping.html)
-
-The system estimates camera trajectory and reconstructs a 3D map using only image input. To explore SLAM in a more realistic setting, I recorded my own video, extracted frames using MATLAB, calibrated the camera, and adapted the example code to run the vSLAM pipeline on real-world data.
+1. Introduction
+Visual Simultaneous Localization and Mapping (visual-SLAM) is a technique that enables a moving camera to estimate its own trajectory and build a map of the surrounding environment using only visual input. It plays an essential role in fields such as robotics and autonomous navigation. This project is based on the official MATLAB example provided by MathWorks [1], which presents a modular vSLAM system including feature detection, pose estimation and map construction. To better understand the implementation, example code was studied first in detail and then extended it by using customized data. By recording a short video and extracting frames through MATLAB, vSLAM was applied with a customized image sequence. This report summarizes both the steps of the original implementation, and the modifications required to make it work with my own dataset.
 
 ---
 
-## 🔧 Project Steps
 
-### 1. Understanding the Example
-The original MATLAB vSLAM example was studied in detail. It consists of:
-- Image loading & camera parameter initialization
-- Feature extraction and matching (ORB)
-- Pose estimation using PnP
-- 3D point triangulation and map building
-- Keyframe insertion and local bundle adjustment
-- Loop closure using bag-of-words
-- Global pose graph optimization
-- Visualization and optional comparison with ground truth
+
+### 2. Implement visual-SLAM example code 
+This part summarizes MATLAB example code about Visual-SLAM. The process contains a series of steps, like image preprocessing, feature extraction and matching, pose estimation, map point triangulation, keyframe selection, bundle adjustment, loop closure detection, and visualization. Each step plays an important role in reconstructing the camera's 3D position and orientation. The following summarizes the main steps of how their Visual-SLAM is implemented.
+
+	Initialization and Image Loading
+Prepare input image sequence and camera parameters for processing.
+
+	Map Initialization
+Estimate the initial camera motion and triangulate the first 3D map points.
+
+	Store Key Frames and Map Points
+Save the initial key frames and map points into structured datasets.
+
+	Place Recognition Database Setup
+Create a visual vocabulary using bag-of-words for future loop detection.
+
+	Initial Map Refinement
+Apply bundle adjustment to optimize the initial reconstruction.
+
+	Tracking
+Track camera motion frame by frame and decide when to insert new key frames.
+
+	Local Mapping
+Expand and refine the map by triangulating new points and adjusting nearby poses.
+
+	Loop Closure 
+Detect and correct drift by recognizing revisited places and updating the global map.
+
+	Evaluation with Ground Truth
+Compare the estimated trajectory with ground truth data to assess system accuracy.
+
 
 ### 2. Recording Real Data
 - A 60-second indoor video was recorded with a smartphone (1920×1080 @ 30fps).
