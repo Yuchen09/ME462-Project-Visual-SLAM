@@ -7,8 +7,6 @@
 ---
 
 ## 1. Introduction
-
-1. Introduction
 Visual Simultaneous Localization and Mapping (visual-SLAM) is a technique that enables a moving camera to estimate its own trajectory and build a map of the surrounding environment using only visual input. It plays an essential role in fields such as robotics and autonomous navigation. This project is based on the official MATLAB example provided by MathWorks [1], which presents a modular vSLAM system including feature detection, pose estimation and map construction. To better understand the implementation, example code was studied first in detail and then extended it by using customized data. By recording a short video and extracting frames through MATLAB, vSLAM was applied with a customized image sequence. This report summarizes both the steps of the original implementation, and the modifications required to make it work with my own dataset.
 
 ---
@@ -18,31 +16,31 @@ Visual Simultaneous Localization and Mapping (visual-SLAM) is a technique that e
 ### 2. Implement visual-SLAM example code 
 This part summarizes MATLAB example code about Visual-SLAM. The process contains a series of steps, like image preprocessing, feature extraction and matching, pose estimation, map point triangulation, keyframe selection, bundle adjustment, loop closure detection, and visualization. Each step plays an important role in reconstructing the camera's 3D position and orientation. The following summarizes the main steps of how their Visual-SLAM is implemented.
 
-	Initialization and Image Loading
+-	Initialization and Image Loading
 Prepare input image sequence and camera parameters for processing.
 
-	Map Initialization
+-	Map Initialization
 Estimate the initial camera motion and triangulate the first 3D map points.
 
-	Store Key Frames and Map Points
+-	Store Key Frames and Map Points
 Save the initial key frames and map points into structured datasets.
 
-	Place Recognition Database Setup
+-	Place Recognition Database Setup
 Create a visual vocabulary using bag-of-words for future loop detection.
 
-	Initial Map Refinement
+-	Initial Map Refinement
 Apply bundle adjustment to optimize the initial reconstruction.
 
-	Tracking
+-	Tracking
 Track camera motion frame by frame and decide when to insert new key frames.
 
-	Local Mapping
+-	Local Mapping
 Expand and refine the map by triangulating new points and adjusting nearby poses.
 
-	Loop Closure 
+-	Loop Closure 
 Detect and correct drift by recognizing revisited places and updating the global map.
 
-	Evaluation with Ground Truth
+-	Evaluation with Ground Truth
 Compare the estimated trajectory with ground truth data to assess system accuracy.
 
 
