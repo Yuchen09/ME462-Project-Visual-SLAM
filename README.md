@@ -82,7 +82,7 @@ After the main loop, perform optimization to correct the drift of camera poses a
 
 
 <p align="center">
-  <img src="Figure/figure2.2.6.2.jpg" width="700">
+  <img src="Figure/figure2.2.6.2.jpg" width="600">
 </p>
 
 
@@ -90,7 +90,7 @@ After the main loop, perform optimization to correct the drift of camera poses a
 In the final step, the estimated camera trajectory is compared with ground truth data to evaluate SLAM accuracy. The ground truth poses are imported from a file using a helper function, and the actual camera path is plotted alongside the optimized trajectory. As shown in the figure 2.2.7.1.
 
 <p align="center">
-  <img src="Figure/figure2.2.7.1.jpg" width="800">
+  <img src="Figure/figure2.2.7.1.jpg" width="700">
 </p>
 
 ## 2.3 Discussion of visual-SLAM application.
@@ -110,13 +110,13 @@ In order to obtain enough data, I use a smartphone to take a video with a resolu
 In order to obtain some important parameters of the camera, such as focal length, principal point, etc. I followed the previous homework steps, took multiple checkerboard pictures, and then obtained the camera parameters through MATLAB, as shown in the following figure 3.2.1
 
 <p align="center">
-  <img src="Figure/figure3.2.1.jpg" width="1000">
+  <img src="Figure/figure3.2.1.jpg" width="600">
 </p>
 
 ## 3.3.1 Map initialization
 After obtaining all the required data, modify the MATLAB example code to perform map initialization for the scene. As shown in the figure 3.3.1
 <p align="center">
-  <img src="Figure/figure3.3.1.1.jpg" width="1000">
+  <img src="Figure/figure3.3.1.1.jpg" width="600">
 </p>
 
 ## 3.3.2 Refine and Visualize the Initial Reconstruction
