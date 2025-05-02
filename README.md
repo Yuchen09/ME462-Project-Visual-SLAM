@@ -19,7 +19,7 @@ This part summarizes MATLAB example code about Visual-SLAM. The process contains
 ###	Initialization and Image Loading 
 -Prepare input image sequence and camera parameters for processing.
 
-###Map Initialization
+### Map Initialization
 -Estimate the initial camera motion and triangulate the first 3D map points.
 
 ###	Store Key Frames and Map Points
@@ -59,6 +59,13 @@ This part summarizes MATLAB example code about Visual-SLAM. The process contains
 - Tuned parameters to improve tracking on real images
 
 ---
+## 2.2.1 Map initialization
+
+
+
+
+
+
 
 ## 📷 Key Results
 
