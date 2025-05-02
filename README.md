@@ -45,7 +45,7 @@ This part summarizes MATLAB example code about Visual-SLAM. The process contains
 
 ## 2.2.1 Map initialization
 <p align="center">
-  <img src="Figure/figure2.2.4.1-2.jpg" width="400">
+  <img src="Figure/figure2.2.4.1-2.jpg" width="800">
 </p>
 
 ## 2. Recording Real Data
