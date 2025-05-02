@@ -16,32 +16,31 @@ Visual Simultaneous Localization and Mapping (visual-SLAM) is a technique that e
 ### 2. Implement visual-SLAM example code 
 This part summarizes MATLAB example code about Visual-SLAM. The process contains a series of steps, like image preprocessing, feature extraction and matching, pose estimation, map point triangulation, keyframe selection, bundle adjustment, loop closure detection, and visualization. Each step plays an important role in reconstructing the camera's 3D position and orientation. The following summarizes the main steps of how their Visual-SLAM is implemented.
 
--	Initialization and Image Loading
-Prepare input image sequence and camera parameters for processing.
+-	Initialization and Image Loading -->Prepare input image sequence and camera parameters for processing.
 
 -	Map Initialization
-Estimate the initial camera motion and triangulate the first 3D map points.
+-->Estimate the initial camera motion and triangulate the first 3D map points.
 
 -	Store Key Frames and Map Points
-Save the initial key frames and map points into structured datasets.
+-->Save the initial key frames and map points into structured datasets.
 
 -	Place Recognition Database Setup
-Create a visual vocabulary using bag-of-words for future loop detection.
+-->Create a visual vocabulary using bag-of-words for future loop detection.
 
 -	Initial Map Refinement
-Apply bundle adjustment to optimize the initial reconstruction.
+-->Apply bundle adjustment to optimize the initial reconstruction.
 
 -	Tracking
-Track camera motion frame by frame and decide when to insert new key frames.
+-->Track camera motion frame by frame and decide when to insert new key frames.
 
 -	Local Mapping
-Expand and refine the map by triangulating new points and adjusting nearby poses.
+-->Expand and refine the map by triangulating new points and adjusting nearby poses.
 
 -	Loop Closure 
-Detect and correct drift by recognizing revisited places and updating the global map.
+-->Detect and correct drift by recognizing revisited places and updating the global map.
 
 -	Evaluation with Ground Truth
-Compare the estimated trajectory with ground truth data to assess system accuracy.
+-->Compare the estimated trajectory with ground truth data to assess system accuracy.
 
 
 ### 2. Recording Real Data
