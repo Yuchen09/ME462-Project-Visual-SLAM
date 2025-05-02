@@ -43,10 +43,60 @@ This part summarizes MATLAB example code about Visual-SLAM. The process contains
 ###	Evaluation with Ground Truth
 -Compare the estimated trajectory with ground truth data to assess system accuracy.
 
+
 ## 2.2.1 Map initialization
+After Downloading Input Image database, map initialization is a crucial step, where the initial 3D map is constructed using two frames. After extracting and matching ORB features, the system estimates the relative camera pose using either a homography (for planar scenes) or a fundamental matrix (for general 3D scenes), depending on which model yields a lower reprojection error. The relative pose is then used to triangulate 3D points from the matched features. As shown in the Afigure 2.2.1.1
 <p align="center">
-  <img src="Figure/figure2.2.4.1-2.jpg" width="800">
+  <img src="Figure/figure2.2.1.1.jpg" width="1000">
 </p>
+
+## 2.2.2 Store initial key frames and map points
+After the initial map is created from two frames, the key frames and corresponding 3D map points are stored using structured data containers. The “imageviewset” object is used in this step to store key frame attributes such as feature points, ORB descriptors, and camera poses. It also tracks connections between key frames through feature correspondences. Meanwhile, the “worldpointset” object records the 3D coordinates of map points and their 2D projections in each key frame. 
+
+## 2.2.3 Initialize place recognition database
+To enable loop closure detection, a visual vocabulary is built using a bag-of-words approach. The “bagOfFeaturesDBoW” object is created from a large set of training images by extracting and clustering ORB descriptors. This database allows the system to recognize previously visited locations by comparing new images to stored visual words.
+
+
+## 2.2.4 Refine and visualize the initial reconstruction
+
+This step first optimizes both camera poses and world points to minimize the overall reprojection errors as shown in the figure 2.2.4.1. After refinement, the attributes of each map point like its position, viewing direction, and observable depth range are updated. Then the map points and the camera locations are visualized, As shown in the figure 2.2.4.2.
+<p align="center">
+  <img src="Figure/figure2.2.4.1-2.jpg" width="1000">
+</p>
+
+## 2.2.5 Tracking
+In this step, the system follows the camera movement by comparing each new frame with the previous key frame. It matches visual features, estimates the camera's position, and decides whether to save the current frame as a new key frame. If too few features are matched, new key frames are added more often to avoid losing track.
+
+
+## 2.2.6 Local mapping and loop closure
+After a new key frame is added, local mapping is performed to expand and refine the map. New 3D points are created by triangulating unmatched features between the current and nearby key frames. Meanwhile, Loop closure detection runs periodically to check if the system has returned to a previously visited location. If a valid loop is detected, the system estimates the relative transformation between the current and past frame and updates the map and key frame connections. As shown in the figure 2.2.6.1.
+
+<p align="center">
+  <img src="Figure/figure2.2.6.1.jpg" width="1000">
+</p>
+
+
+
+After the main loop, perform optimization to correct the drift of camera poses and update the 3-D locations of the map points using the optimized poses and the associated scales. As shown in the figure 2.2.6.2.
+
+
+
+<p align="center">
+  <img src="Figure/figure2.2.6.2.jpg" width="1000">
+</p>
+
+
+## 2.2.7 Compare with the ground truth
+In the final step, the estimated camera trajectory is compared with ground truth data to evaluate SLAM accuracy. The ground truth poses are imported from a file using a helper function, and the actual camera path is plotted alongside the optimized trajectory. As shown in the figure 2.2.7.1.
+
+<p align="center">
+  <img src="Figure/figure2.2.7.1.jpg" width="1000">
+</p>
+
+## 2.3 Discussion of visual-SLAM application.
+For my own implementation of the vSLAM, I plan to record a video of an indoor scene. Then, extracting images from the video at regular intervals to create a frame sequence. After generating the image sequence, I will modify parts of the MATLAB example code, mainly the image loading and camera parameter sections to make it work with my own data. This allowed me to apply the vSLAM, including feature tracking, pose estimation, mapping, and visualization, based on images from a real scene.
+
+
 
 ## 2. Recording Real Data
 - A 60-second indoor video was recorded with a smartphone (1920×1080 @ 30fps).
