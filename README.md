@@ -126,56 +126,37 @@ Following the same steps as in Sections 2.2.2 to 2.2.4, results are obtained as 
   <img src="Figure/figure3.3.2.1-2.jpg" width="1000">
 </p>
 
-## 2. Recording Real Data
-- A 60-second indoor video was recorded with a smartphone (1920×1080 @ 30fps).
-- MATLAB was used to extract every 5th frame, resulting in 906 images for the dataset.
 
-## 3. Camera Calibration
-- Calibration images of a checkerboard pattern were taken.
-- MATLAB’s `estimateCameraParameters` function was used to obtain intrinsic parameters for the external webcam used.
-
-##4. Adapting the Code
-- Modified image loading to work with the custom image sequence
-- Replaced the default camera intrinsics with the calibrated parameters
-- Removed the ground truth section as no GT data was available
-- Tuned parameters to improve tracking on real images
-
----
-
-
-
-
-
-
-
-
-## 📷 Key Results
-
-- ✅ Initial map points triangulated successfully
-- ✅ ORB features tracked across frames
-- ✅ Loop closure detected and triggered global optimization
-- ✅ Final trajectory visualized with purple "optimized path"
-
-> _Real-world challenges included camera shake, lighting variation, and ensuring enough texture in the environment for feature detection._
-
----
-
-## 📈 Figures
+3.3.3 Local Mapping and Loop Closure
+Following the same steps, the below shows some parts of the trajectory of the camera being tracked during the main loop.
 
 <p align="center">
-  <img src="figures/initial_map.png" width="400" title="Initial Map and Keyframes">
-  <img src="figures/final_trajectory.png" width="400" title="Optimized Trajectory After Loop Closure">
+  <img src="Figure/figure3.3.3.1.jpg" width="1000">
+</p>
+<p align="center">
+  <img src="Figure/figure3.3.3.2.jpg" width="1000">
+</p>
+<p align="center">
+  <img src="Figure/figure3.3.3.3.jpg" width="1000">
+</p>
+<p align="center">
+  <img src="Figure/figure3.3.3.4.jpg" width="1000">
+</p>
+After the main loop, perform optimization to correct the drift of camera poses and update the 3-D locations of the map points using the optimized poses and the associated scales. As shown in the figure 3.3.3.6
+<p align="center">
+  <img src="Figure/figure3.3.3.5.jpg" width="1000">
 </p>
 
----
-
-## ✅ Conclusion
-
-This project demonstrates how a visual-SLAM system can be adapted to real data using MATLAB. From recording to calibration and tracking, the pipeline was tested end-to-end. Although working with real-world images presents challenges like motion blur and lighting, the overall SLAM system performed well after parameter tuning and code adaptation. This hands-on process deepened my understanding of visual localization and 3D mapping in practical scenarios.
 
 ---
 
-## 📚 Reference
+## 4. Conclusion
+In this project, a visual-SLAM system is implemented based on the example provided. Starting with recording a video and converting it into images and then use them as input to the system. I calibrated the camera, adapted the example code, and followed each step of the process, from map initialization to loop closure and optimization. While the process was not always smooth, for example, making sure the images had enough visual features and setting proper parameters, I was able to make the system work and visualize the final camera trajectory. Overall, this experience helped me better understand how visual-SLAM works in practice, and what challenges can arise when working with real data instead of ideal datasets.
+
+
+---
+
+## 5. Reference
 
 [1] MathWorks. "Monocular Visual Simultaneous Localization and Mapping."  
 *MATLAB Documentation*. https://www.mathworks.com/help/vision/ug/monocular-visual-simultaneous-localization-and-mapping.html
