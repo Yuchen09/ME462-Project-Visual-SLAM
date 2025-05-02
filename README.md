@@ -82,7 +82,7 @@ After the main loop, perform optimization to correct the drift of camera poses a
 
 
 <p align="center">
-  <img src="Figure/figure2.2.6.2.jpg" width="1000">
+  <img src="Figure/figure2.2.6.2.jpg" width="700">
 </p>
 
 
@@ -90,7 +90,7 @@ After the main loop, perform optimization to correct the drift of camera poses a
 In the final step, the estimated camera trajectory is compared with ground truth data to evaluate SLAM accuracy. The ground truth poses are imported from a file using a helper function, and the actual camera path is plotted alongside the optimized trajectory. As shown in the figure 2.2.7.1.
 
 <p align="center">
-  <img src="Figure/figure2.2.7.1.jpg" width="1000">
+  <img src="Figure/figure2.2.7.1.jpg" width="800">
 </p>
 
 ## 2.3 Discussion of visual-SLAM application.
