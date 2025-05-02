@@ -110,13 +110,13 @@ In order to obtain enough data, I use a smartphone to take a video with a resolu
 In order to obtain some important parameters of the camera, such as focal length, principal point, etc. I followed the previous homework steps, took multiple checkerboard pictures, and then obtained the camera parameters through MATLAB, as shown in the following figure 3.2.1
 
 <p align="center">
-  <img src="Figure/figure3.2.1.jpg" width="600">
+  <img src="Figure/figure3.2.1.jpg" width="400">
 </p>
 
 ## 3.3.1 Map initialization
 After obtaining all the required data, modify the MATLAB example code to perform map initialization for the scene. As shown in the figure 3.3.1
 <p align="center">
-  <img src="Figure/figure3.3.1.1.jpg" width="600">
+  <img src="Figure/figure3.3.1.1.jpg" width="400">
 </p>
 
 ## 3.3.2 Refine and Visualize the Initial Reconstruction
